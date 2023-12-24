@@ -26,5 +26,3 @@ async function runFix() {
 }
 
 runFix();
-
-export {};
