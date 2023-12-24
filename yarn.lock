@@ -1785,6 +1785,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@consissamsy/ui-rect@workspace:packages/core/rect":
+  version: 0.0.0-use.local
+  resolution: "@consissamsy/ui-rect@workspace:packages/core/rect"
+  dependencies:
+    "@babel/runtime": ^7.13.10
+  languageName: unknown
+  linkType: soft
+
 "@cypress/request@npm:^2.88.6":
   version: 2.88.12
   resolution: "@cypress/request@npm:2.88.12"

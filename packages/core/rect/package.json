@@ -27,7 +27,7 @@
     "clean": "rm -rf dist",
     "version": "yarn version"
   },
-   "homepage": "https://github.com/frontendsystem/components",
+  "homepage": "https://github.com/frontendsystem/components",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/frontendsystem/components.git"
