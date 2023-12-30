@@ -26,10 +26,6 @@ function createContext<ContextValueType extends object | null>(
   return [Provider, useContext] as const;
 }
 
-/* -------------------------------------------------------------------------------------------------
- * createContextScope
- * -----------------------------------------------------------------------------------------------*/
-
 type Scope<C = any> = { [scopeName: string]: React.Context<C>[] } | undefined;
 type ScopeHook = (scope: Scope) => { [__scopeProp: string]: Scope };
 interface CreateScope {
@@ -39,10 +35,6 @@ interface CreateScope {
 
 function createContextScope(scopeName: string, createContextScopeDeps: CreateScope[] = []) {
   let defaultContexts: any[] = [];
-
-  /* -----------------------------------------------------------------------------------------------
-   * createContext
-   * ---------------------------------------------------------------------------------------------*/
 
   function createContext<ContextValueType extends object | null>(
     rootComponentName: string,
@@ -76,10 +68,6 @@ function createContextScope(scopeName: string, createContextScopeDeps: CreateSco
     return [Provider, useContext] as const;
   }
 
-  /* -----------------------------------------------------------------------------------------------
-   * createScope
-   * ---------------------------------------------------------------------------------------------*/
-
   const createScope: CreateScope = () => {
     const scopeContexts = defaultContexts.map((defaultContext) => {
       return React.createContext(defaultContext);
@@ -96,10 +84,6 @@ function createContextScope(scopeName: string, createContextScopeDeps: CreateSco
   createScope.scopeName = scopeName;
   return [createContext, composeContextScopes(createScope, ...createContextScopeDeps)] as const;
 }
-
-/* -------------------------------------------------------------------------------------------------
- * composeContextScopes
- * -----------------------------------------------------------------------------------------------*/
 
 function composeContextScopes(...scopes: CreateScope[]) {
   const baseScope = scopes[0];
