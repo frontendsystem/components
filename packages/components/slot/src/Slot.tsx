@@ -35,6 +35,7 @@ const SlotClone = forwardRef<any, SlotCloneProps>((props, forwardedRef) => {
     const childRef = (children as any).ref;
     return cloneElement(children, {
       ...mergeProps(slotProps, children.props),
+      // @ts-ignore
       ref: forwardedRef ? composeRefs(forwardedRef, childRef) : childRef, // need to check why ref does not exist
     });
   }
