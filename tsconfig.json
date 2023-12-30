@@ -1,3 +1,12 @@
 {
-  "extends": "./tsconfig.base.json"
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "paths": {
+      "@consissamsy/ui-number": ["./packages/core/number/src"],
+      "@consissamsy/ui-primitive": ["./packages/core/base/src"],
+      "@consissamsy/ui-rect": ["./packages/core/rect/src"],
+      "@consissamsy/ui-react-compose-refs": ["./packages/components/compose-refs/src"],
+      "@consissamsy/ui-react-context": ["./packages/components/context/src"]
+    }
+  }
 }
