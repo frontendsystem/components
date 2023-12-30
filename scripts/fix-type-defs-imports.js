@@ -3,13 +3,11 @@ const path = require('path');
 const glob = require('glob');
 const replaceInFiles = require('replace-in-files');
 
-console.log('Fix bad imports in d.ts files…');
-
 async function runFix() {
   try {
     const { countOfMatchesByPaths } = await replaceInFiles({
       files: 'packages/**/dist/**/*.d.ts',
-      from: /(import\("@consissamsy-ui\/[a-z-]+)[a-zA-Z/"]*"\)/g,
+      from: /(import\("@consissamsy\/[a-z-]+)[a-zA-Z/"]*"\)/g,
       to: '$1")',
     });
     console.log('Fixed:', countOfMatchesByPaths);
